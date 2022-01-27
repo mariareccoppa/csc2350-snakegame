@@ -5,22 +5,29 @@ import display from "./display";
 class Snake {
   private currentPosition: number;
   private currentDirection: number;
-  constructor(newSnake: 0) {
-    this.currentPosition = 1;
+  constructor() {
+    this.currentPosition = 0;
     this.currentDirection = 1;
   }
   public move(numSquares: number) {
-    if (this.currentPosition > 0) {
-      this.currentPosition = 5;
+    if (this.currentDirection === 1) {
+      this.currentPosition = this.currentPosition + numSquares;
+    } else {
+      this.currentPosition = this.currentPosition - numSquares;
     }
   }
   public turn(numSquares: number) {
-    if (this.currentDirection > 0) {
-      this.currentDirection = 5;
+    if (this.currentDirection === 1) {
+      this.currentDirection = this.currentDirection + numSquares;
+    } else {
+      this.currentDirection = this.currentDirection - numSquares;
     }
   }
   public get position(): number {
     return this.currentPosition;
+  }
+  public get direction(): number {
+    return this.currentDirection;
   }
 }
 

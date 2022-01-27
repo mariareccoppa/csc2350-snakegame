@@ -10,9 +10,29 @@ export default function App() {
     // Include your display statements to test below
     document.getElementById("output")!.innerText = "OUTPUT:\n";
     display("hey");
-    const firstSnake = new Snake(1);
+    const firstSnake = new Snake("1");
     firstSnake.move(10);
-    display(firstSnake.move);
+    firstSnake.turn(20);
+    const secondSnake = new Snake("2");
+    secondSnake.move(21);
+    secondSnake.turn(7);
+
+    display(
+      "snake is moving",
+      firstSnake.position,
+      "squares,",
+      "and snake is turning",
+      firstSnake.direction,
+      "squares"
+    );
+    display(
+      "snake is moving",
+      secondSnake.position,
+      "squares,",
+      "and snake is turning",
+      secondSnake.direction,
+      "squares"
+    );
   }, []);
   return (
     <div className="App">
