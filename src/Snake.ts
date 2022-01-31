@@ -18,9 +18,9 @@ class Snake {
   }
   public turn(numSquares: number) {
     if (this.currentDirection === 1) {
-      this.currentDirection = this.currentDirection + numSquares;
+      this.currentDirection = this.currentDirection - 3;
     } else {
-      this.currentDirection = this.currentDirection - numSquares;
+      this.currentDirection = this.currentDirection + 3;
     }
   }
   public get position(): number {
