@@ -24,17 +24,17 @@ export default function App() {
       "snake is moving",
       firstSnake.position,
       "squares,",
-      "and snake is turning",
+      "and snake is in a",
       firstSnake.direction,
-      "squares"
+      "direction"
     );
     display(
       "snake is moving",
       secondSnake.position,
       "squares,",
-      "and snake is turning",
+      "and snake is in a",
       secondSnake.direction,
-      "squares"
+      "direction"
     );
   }, []);
   return (

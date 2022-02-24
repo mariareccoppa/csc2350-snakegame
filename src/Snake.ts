@@ -1,17 +1,22 @@
 import display from "./display";
+import Point from "./Point";
 
 // place your code on line 5 above the export statement below
 
 class Snake {
-  private currentPosition: number;
+  private currentPosition: Point;
   private currentDirection: number;
   constructor() {
-    this.currentPosition = 0;
+    this.currentPosition = Point;
     this.currentDirection = 1;
+    this.currentPosition = new Point(0, 0);
   }
   public move(numSquares: number) {
     if (this.currentDirection === 1) {
-      this.currentPosition = this.currentPosition + numSquares;
+      this.currentPosition = new Point(
+        this.currentPosition.x,
+        this.currentPosition.y - numSquares
+      );
     } else {
       this.currentPosition = this.currentPosition - numSquares;
     }
@@ -26,7 +31,9 @@ class Snake {
   public get position(): number {
     return this.currentPosition;
   }
-  public get direction(): number {
+  public get direction(): string {
+    if (this.currentDirection === -2) return "backward";
+    else return "forward";
     return this.currentDirection;
   }
 }
