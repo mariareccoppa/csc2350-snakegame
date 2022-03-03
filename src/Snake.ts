@@ -6,7 +6,9 @@ import Point from "./Point";
 class Snake {
   private currentPosition: Point;
   private currentDirection: number;
-  constructor() {
+  sna: Snake;
+  constructor(s: Snake) {
+    this.sna = s;
     this.currentPosition = Point;
     this.currentDirection = 1;
     this.currentPosition = new Point(0, 0);
@@ -21,13 +23,26 @@ class Snake {
       this.currentPosition = this.currentPosition - numSquares;
     }
   }
-  public turn(numSquares: number) {
+  public turnRight(numSquares: number) {
     if (this.currentDirection === 1) {
-      this.currentDirection = this.currentDirection - 3;
-    } else {
-      this.currentDirection = this.currentDirection + 3;
+      this.currentDirection = -2;
+    } else if (this.currentDirection === -1) {
+      this.currentDirection = 0;
     }
   }
+  public turnUp(numSquares: number) {
+    if (this.currentDirection === 0) {
+      this.currentDirection = 0;
+    } else if (this.currentDirection === -2) {
+      this.currentDirection = -2;
+    }
+  }
+
+  //right=1
+  //left=-1
+  //up=0
+  //down=-2//
+
   public get position(): number {
     return this.currentPosition;
   }
